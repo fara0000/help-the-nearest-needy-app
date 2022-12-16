@@ -1,5 +1,5 @@
-const enum Role {
-    NEEDY = 'NEEDY',
-    ADMIN = 'ADMIN',
-    VOLUNTEER = 'VOLUNTEER',
+export enum Role {
+  NEEDY = 'NEEDY',
+  ADMIN = 'ADMIN',
+  VOLUNTEER = 'VOLUNTEER',
 }
