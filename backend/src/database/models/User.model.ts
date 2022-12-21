@@ -1,7 +1,13 @@
-import {Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne} from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  JoinColumn,
+  OneToOne,
+} from 'typeorm';
 import { Length, Max, Min } from 'class-validator';
-import {Role} from "../../types/enums/Role";
-import {Location} from "./Location.model";
+import { Role } from '../../types';
+import { Location } from './Location.model';
 
 @Entity()
 export class User {

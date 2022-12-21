@@ -11,8 +11,8 @@ import { Status } from '../../types';
 import { Location } from './Location.model';
 import { User } from './User.model';
 
-@Entity()
-export class Post {
+@Entity('Feed')
+export class Feed {
   @PrimaryGeneratedColumn()
   id: number;
 
