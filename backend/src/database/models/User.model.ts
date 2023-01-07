@@ -9,7 +9,7 @@ import { Length, Max, Min } from 'class-validator';
 import { Role } from '../../types';
 import { Location } from './Location.model';
 
-@Entity()
+@Entity('user')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -30,12 +30,16 @@ export class User {
   @Length(5, 50)
   email: string;
 
+  @Column({ nullable: false })
+  password: string;
+
   @Column({ default: 5, type: 'float' })
   @Min(1)
   @Max(5)
   rating: number;
 
   @Column()
+  @Column({ nullable: true })
   temp_token: string;
 
   @Column({

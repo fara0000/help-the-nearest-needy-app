@@ -17,12 +17,13 @@ export class FeedService {
   }
 
   async createPost(feedDto: FeedDto): Promise<Feed> {
-    return this.feedRepository.create(feedDto);
+    console.log(feedDto);
+    return this.feedRepository.save(feedDto);
   }
 
   async getPostById(id: number): Promise<Feed> {
     const feed = this.feedRepository.findOne({ where: { id } });
-    if (!feed) throw new NotFoundException('Пользователь не найден');
+    if (!feed) throw new NotFoundException('Пост не найден');
     return feed;
   }
 }

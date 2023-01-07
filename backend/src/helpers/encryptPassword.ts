@@ -1,7 +1,6 @@
 import * as bcrypt from 'bcrypt';
 
-export const encryptPassword = async () => {
+export const encryptPassword = async (password: string) => {
   const saltOrRounds = 10;
-  const password = 'random_password';
   return await bcrypt.hash(password, saltOrRounds);
 };

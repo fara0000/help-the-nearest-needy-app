@@ -9,7 +9,7 @@ import { Length, Max, Min } from 'class-validator';
 import { Role } from '../../types';
 import { Coordinate } from './Coordinate.model';
 
-@Entity()
+@Entity('Location')
 export class Location {
   @PrimaryGeneratedColumn()
   id: number;

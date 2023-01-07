@@ -2,14 +2,12 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { FeedService } from './feed.service';
 import { Feed } from '../../database/models';
 import {
-  ApiBody,
-  ApiCreatedResponse,
   ApiForbiddenResponse,
-  ApiProperty,
+  ApiOkResponse,
   ApiTags,
-  ApiUnprocessableEntityResponse
+  ApiUnprocessableEntityResponse,
 } from '@nestjs/swagger';
-import {FeedDto} from "../../dto";
+import { FeedDto } from '../../dto';
 
 @Controller('/post')
 @ApiTags('Feed')
@@ -22,11 +20,11 @@ export class FeedController {
   }
 
   @Post()
-  @ApiBody({ type: FeedDto })
-  @ApiCreatedResponse({ description: 'Created Succesfully' })
+  @ApiOkResponse({ description: 'Successfully added' })
   @ApiUnprocessableEntityResponse({ description: 'Bad Request' })
   @ApiForbiddenResponse({ description: 'Unauthorized Request' })
   async createPost(@Body() feed: FeedDto): Promise<Feed> {
+    console.log(feed);
     return this.postService.createPost(feed);
   }
 
