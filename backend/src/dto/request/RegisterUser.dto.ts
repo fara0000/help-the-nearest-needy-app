@@ -12,11 +12,11 @@ export class RegisterUserDto {
   @ApiProperty({ example: 'Ivanov' })
   lastName: string;
 
-  @ApiProperty({ example: 'ivan123' })
-  password: string;
-
   @ApiProperty({ example: 'ivan123@mail.ru' })
   email: string;
+
+  @ApiProperty({ example: 'ivan123' })
+  password: string;
 
   @ApiProperty({ example: 'NEEDY' })
   role: Role;

@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as models from '../database/models';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Coordinate, Feed, Location, User } from '../database/models';
+import * as fs from 'fs';
 
 @Module({
   imports: [
@@ -19,7 +20,12 @@ import { Coordinate, Feed, Location, User } from '../database/models';
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
         entities: [Coordinate, Feed, Location, User],
+        synchronize: true,
+        ssl: {
+          ca: fs.readFileSync(process.env.SSL_CERT).toString(),
+        },
       }),
+
       // imports: [ConfigModule],
       // useFactory: (configService: ConfigService) => ({
       //   type: 'postgres',
