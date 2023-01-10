@@ -1,0 +1,1 @@
+DELETE FROM "user" where "user".id = 5;

@@ -10,6 +10,6 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-      - /home/fara000/root.crt:app/cert/.postgresql/root.crt
+      - /home/fara000/root.crt:app/cert/
     ports:
       - 3002:3002
